@@ -5,13 +5,36 @@ export const Bathtub = () => {
     const [message, setMessage] = useState('');
     const full = 5;
 
+    const increaseWaterLevel = () => {
+        if(waterLevel >= full){
+            setMessage('The bathtub is already full!')
+        } else {
+            console.log(`increasing water level to ${waterLevel + 1}`)
+            setMessage('');
+            setWaterLevel(waterLevel + 1);
+        }
+    }
+    const decreaseWaterLevel = () => {
+        if(waterLevel <= 0){
+            setMessage('The bathtub is already empty!')
+        } else {
+            console.log(`decreasing water level to ${waterLevel - 1}`)
+            setMessage('');
+            setWaterLevel(waterLevel - 1)
+        }
+    }
+
     return (
         <div>
             <p>Water level is currently at {waterLevel}</p>
-            <button onClick={() => console.log('increaseWaterLevel')}>
+            {message 
+            ? <p>{message}</p>
+            : null
+            }
+            <button onClick={increaseWaterLevel}>
                 Add Water
             </button>
-            <button onClick={() => console.log('decreaseWaterLevel')}>
+            <button onClick={decreaseWaterLevel}>
                 Drain Water
             </button>
         </div>
