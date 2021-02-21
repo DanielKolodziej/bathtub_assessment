@@ -1,8 +1,9 @@
 import './App.css';
+import { Bathtub } from './Components/Bathtub';
 
 function App() {
   return (
-    <div>app</div>
+    <Bathtub />
   );
 }
 
