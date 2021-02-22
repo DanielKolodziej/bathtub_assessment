@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { BathtubView } from './BathtubView';
 
 export const Bathtub = () => {
     const [waterLevel, setWaterLevel] = useState(0);
@@ -37,6 +38,7 @@ export const Bathtub = () => {
             <button onClick={decreaseWaterLevel}>
                 Drain Water
             </button>
+            <BathtubView waterLevel={waterLevel}/>
         </div>
     );
 }
