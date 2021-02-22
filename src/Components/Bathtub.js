@@ -29,6 +29,8 @@ export const Bathtub = () => {
                     setWaterLevel(waterLevel - 1);
                     }
                     break;
+                default:
+                    setStatus('');
             }
           },
             2000
@@ -36,7 +38,7 @@ export const Bathtub = () => {
         }
         return () => clearTimeout(interval);
       },
-      [isRunning, waterLevel,]
+      [isRunning, waterLevel, status,]
     );
 
     const increaseWaterLevel = () => {
